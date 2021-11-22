@@ -1,0 +1,19 @@
+1. Select all the documents in the users collection using find :
+	- db.users.find().pretty()
+	- db.users.find({gender:"Male"}).pretty()
+
+2. Select single document using findOne : 
+	- db.users.findOne()
+	- db.users.findOne({gender:"Male"})
+
+3. Update at least 3 documents using update and updateMany :
+	- db.users.update({"email" : "jcolquitt6@hostgator.com"}, {$set:{"first_name":"bala"}})
+	- db.users.updateMany({"gender" : "Female"}, {$set:{"last_name":"bala"}})
+
+4. Delete documents using remove, remove that will remove just 1 document, deleteOne, deleteMany
+	- db.users.deleteOne({"email" : "kmcmearty0@dagondesign.com"}) --> remove one item according to condition
+	- db.users.deleteMany({"gender" : "Female"}) --> remove multiple items according to condition
+	- db.users.remove({"gender" : "Male"}) --> remove multiple items according to condition
+	- db.users.remove({}) --> remove whole items
+	- db.users.remove({},1) --> remove one item
+	- db.users.deleteMany({}) --> remove whole items
